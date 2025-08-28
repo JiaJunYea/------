@@ -216,9 +216,15 @@
 
             bus.stopName = stopName
             bus.nextStations = [nextstop1.StopName?.Zh_tw || '無資料', nextstop2.StopName?.Zh_tw || '無資料']
+            // 取得目前站點經緯度
+            bus.currentLocation = {
+              latitude: currentstop.StopPosition.PositionLat || '無資料',
+              longitude: currentstop.StopPosition.PositionLon || '無資料',
+            }
 
             console.log('[寫入 bus 資料]', bus.stopName)
             console.log('[寫入 bus 資料]', bus.nextStations)
+            console.log('[寫入 bus 位置]', bus.currentLocation)
           }
         } catch (error) {
           console.error('處理車輛資料錯誤', error)
