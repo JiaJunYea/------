@@ -17,7 +17,7 @@
 
         <!-- 公車動態資訊 -->
         <p>目前站: <span style="font-size: 1.4rem; color:red">{{ bus.stopName || '無資料' }}</span></p>
-        <p><span style="font-size: 1.5rem; color:blue">{{ getNextStopLabel(bus) }}</span></p>
+        <p><span style="font-size: 1.4rem; color:blue">{{ getNextStopLabel(bus) }}</span></p>
         <p>
           公車目前站點位置:
           經度 {{ bus.currentLocation.longitude ?? '無' }},
