@@ -10,8 +10,8 @@
         <h4>變速系統：{{ bus.Transmissionsystem }}</h4>
         <p>領牌範圍：{{ bus.Licenserange }}</p>
         <b>
-          <span style="color:red;">圖片資訊是{{ bus.busroute.routeName }}</span>
-          <span style="color:green;">：{{ bus.busroute.license }}</span>
+          圖片資訊是<span style="color:red;">{{ bus.busroute.routeName }}</span>
+          <span style="color:green;">的{{ bus.busroute.license }}</span>
         </b>
         <h5>{{ bus.description }}</h5>
 
