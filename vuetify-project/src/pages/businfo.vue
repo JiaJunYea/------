@@ -16,13 +16,13 @@
         <h5>{{ bus.description }}</h5>
 
         <!-- 公車動態資訊 -->
-        <p>目前站: <span style="font-size: 1.4rem; color:red">{{ bus.stopName || '無資料' }}</span></p>
+        <p>目前站: <span style="font-size: 1.4rem; color:black">{{ bus.stopName || '無資料' }}</span></p>
         <p><span style="font-size: 1.4rem; color:blue">{{ getNextStopLabel(bus) }}</span></p>
-        <p>
+        <p><span style="color:black">
           公車目前站點位置:
           經度 {{ bus.currentLocation.longitude ?? '無' }},
           緯度 {{ bus.currentLocation.latitude ?? '無' }}
-        </p>
+        </span></p>
       </div>
     </div>
   </div>
