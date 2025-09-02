@@ -16,6 +16,8 @@
         <h5>{{ bus.description }}</h5>
 
         <!-- 公車動態資訊 -->
+        <br>
+        <h2 style="text-decoration: underline;">即時公車動態</h2>
         <p>目前站: <span style="font-size: 1.5rem; color:black">{{ bus.stopName || '無資料' }}</span></p>
         <p><span style="font-size: 1.5rem; color:blue">{{ getNextStopLabel(bus) }}</span></p>
         <p><span style="font-size: 1.3rem; color:black">
