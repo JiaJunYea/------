@@ -25,6 +25,8 @@ jobs:
         env:
           # VITE_API_URL: ${{ secrets.VITE_API_URL }} → 從 GitHub Secrets 取得敏感資料（API URL），避免硬寫在程式碼
           VITE_API_URL: ${{ secrets.VITE_API_URL }}
+          VITE_BUS_CLIENT_ID: ${{ secrets.VITE_BUS_CLIENT_ID }}
+          VITE_BUS_CLIENT_SECRET: ${{ secrets.VITE_BUS_CLIENT_SECRET }}
       # 步驟三：部署
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
