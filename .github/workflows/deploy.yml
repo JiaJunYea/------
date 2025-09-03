@@ -22,6 +22,9 @@ jobs:
           cd vuetify-project
           npm install
           npm run build
+        env:
+          # VITE_API_URL: ${{ secrets.VITE_API_URL }} → 從 GitHub Secrets 取得敏感資料（API URL），避免硬寫在程式碼
+          VITE_API_URL: ${{ secrets.VITE_API_URL }}
       # 步驟三：部署
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
