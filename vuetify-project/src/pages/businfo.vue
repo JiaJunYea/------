@@ -17,16 +17,24 @@
 
         <!-- 公車動態資訊 -->
         <br>
-        <h2 style="text-decoration: underline;">即時公車動態</h2>
-        <p>目前站: <span style="font-size: 1.5rem; color:black">{{ bus.stopName || '無資料' }}</span></p>
-        <p><span style="font-size: 1.5rem; color:blue">{{ getNextStopLabel(bus) }}</span></p>
-        <p><span style="font-size: 1.3rem; color:black">
-          公車目前站點位置:
-          <br>
-          經度 {{ bus.currentLocation.longitude ?? '無' }}
-          <br>
-          緯度 {{ bus.currentLocation.latitude ?? '無' }}
-        </span></p>
+        <div style="border: 1px solid red; width: 60%; padding: 10px; border-radius: 8px;">
+          <h2 style="text-decoration: underline;">即時公車動態</h2>
+
+          <div v-if="!bus.stopName">
+            <p style="font-size: 1.5rem; color:red">尚未發車...</p>
+          </div>
+          <div v-else>
+            <p>目前站: <span style="font-size: 1.5rem; color:black">{{ bus.stopName || '無資料' }}</span></p>
+            <p><span style="font-size: 1.5rem; color:blue">{{ getNextStopLabel(bus) }}</span></p>
+            <p><span style="font-size: 1.3rem; color:black">
+              公車目前站點位置:
+              <br>
+              經度 {{ bus.currentLocation.longitude ?? '無' }}
+              <br>
+              緯度 {{ bus.currentLocation.latitude ?? '無' }}
+            </span></p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -257,7 +265,7 @@
     const stops = bus.nextStations
     // console.log(getNextStopLabel)
     if (!Array.isArray(stops) || stops.length === 0 || !stops[0]) {
-      return '下一站：無'
+      return '下一站：無資料'
     }
     if (stops.length === 1 || !stops[1]) {
       return `下一站：${stops[0]}`
